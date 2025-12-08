@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
 import { Sparkles, Heart, Users, TreeDeciduous } from "lucide-react";
 
 import GlassCard from "@/components/ui/glass-card";
@@ -29,9 +29,9 @@ const pains = [
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 0.6, ease: "easeOut" as const },
   viewport: { once: true, amount: 0.3 },
-};
+} satisfies MotionProps;
 
 export default function KidsPage() {
   return (
@@ -87,11 +87,14 @@ export default function KidsPage() {
           {pains.map((pain, idx) => (
             <motion.div
               key={pain.title}
-              whileHover={{ y: -10, borderColor: "var(--color-primary)" }}
-              transition={{ type: "spring", stiffness: 320, damping: 18 }}
+              whileHover={{
+                y: -10,
+                borderColor: "var(--color-primary)",
+                transition: { type: "spring", stiffness: 320, damping: 18 },
+              }}
               className="h-full"
               {...fadeUp}
-              transition={{ duration: 0.45, ease: "easeOut" }}
+              transition={{ duration: 0.45, ease: "easeOut" as const }}
             >
               <GlassCard className="relative h-full border border-white/40 p-6 transition-colors duration-200">
                 <div className="mb-4 flex items-center gap-2 text-[var(--color-primary)]">
