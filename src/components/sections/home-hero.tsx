@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import { Button } from "../ui/button";
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -13,9 +13,9 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
 const HomeHero = () => {
@@ -60,7 +60,7 @@ const HomeHero = () => {
           variants={item}
           initial="hidden"
           animate="visible"
-          transition={{ delay: 1.3, duration: 0.6, ease: "easeOut" }}
+          transition={{ delay: 1.3, duration: 0.6, ease: "easeOut" as const }}
         >
           <Image
             src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1400&q=80"
