@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
 import { Mail, MapPin, MessageCircle, Send } from "lucide-react";
 import { z } from "zod";
 
@@ -12,15 +12,15 @@ import GlassCard from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const reasonOptions = ["crianca", "adulto", "casal", "outros"] as const;
+
 const contactSchema = z.object({
   name: z.string().min(2, "Digite seu nome completo."),
   whatsapp: z
     .string()
     .min(10, "Inclua DDD e número.")
     .regex(/^\+?[\d\s()-]{8,}$/, "Use apenas números com DDD."),
-  reason: z.enum(["crianca", "adulto", "casal", "outros"], {
-    required_error: "Selecione um motivo.",
-  }),
+  reason: z.enum(reasonOptions, { message: "Selecione um motivo." }),
   message: z.string().min(10, "Conte um pouco sobre o que precisa."),
 });
 
@@ -29,9 +29,9 @@ type ContactFormData = z.infer<typeof contactSchema>;
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 0.6, ease: "easeOut" as const },
   viewport: { once: true, amount: 0.3 },
-};
+} satisfies MotionProps;
 
 const supportChannels = [
   {
@@ -190,7 +190,7 @@ export default function ContatoPage() {
           className="rounded-3xl border border-white/50 bg-white/80 p-8 shadow-sm backdrop-blur-xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" as const }}
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="mb-8 space-y-2">
