@@ -145,8 +145,8 @@ export default function IndividualPage() {
                 y: -5,
                 borderColor: "var(--color-secondary)",
                 boxShadow: "0 10px 30px -10px rgba(var(--color-secondary-rgb), 0.1)",
+                transition: { type: "spring", stiffness: 280, damping: 20 },
               }}
-              transition={{ type: "spring", stiffness: 280, damping: 20 }}
               className="h-full"
               {...fadeUp}
               transition={{ duration: 0.5 + idx * 0.03, ease: "easeOut" as const }}
