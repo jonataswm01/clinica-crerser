@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Diamond, Feather, GraduationCap, Infinity } from "lucide-react";
 
 import GlassCard from "@/components/ui/glass-card";
@@ -12,23 +12,33 @@ import { Button } from "@/components/ui/button";
 
 const accentRgb = "74,59,50";
 
-const stagger = {
+const stagger: Variants = {
   hidden: { opacity: 0, y: 18 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: "easeOut", staggerChildren: 0.08, delayChildren: 0.1 },
+    transition: {
+      duration: 0.65,
+      ease: "easeOut" as const,
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
   },
 };
 
-const child = {
+const child: Variants = {
   hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
 };
 
-const dropCapMotion = {
+const dropCapMotion: Variants = {
   hidden: { opacity: 0, y: 22, filter: "blur(8px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.75, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.75, ease: "easeOut" as const },
+  },
 };
 
 const pillars = [
@@ -210,7 +220,7 @@ export default function AboutPage() {
               key={title}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" as const }}
               viewport={{ once: true, amount: 0.4 }}
             >
               <MotionGlassCard
