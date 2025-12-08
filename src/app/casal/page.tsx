@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
 import { HeartHandshake, Infinity, MessagesSquare, Shuffle, Sparkle, Waves } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -14,23 +14,23 @@ const tertiaryRgb = "179,158,181";
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.65, ease: "easeOut" },
+  transition: { duration: 0.65, ease: "easeOut" as const },
   viewport: { once: true, amount: 0.3 },
-};
+} satisfies MotionProps;
 
 const slideLeft = {
   initial: { opacity: 0, x: -50 },
   whileInView: { opacity: 1, x: 0 },
-  transition: { duration: 0.7, ease: "easeOut" },
+  transition: { duration: 0.7, ease: "easeOut" as const },
   viewport: { once: true, amount: 0.4 },
-};
+} satisfies MotionProps;
 
 const slideRight = {
   initial: { opacity: 0, x: 50 },
   whileInView: { opacity: 1, x: 0 },
-  transition: { duration: 0.7, ease: "easeOut" },
+  transition: { duration: 0.7, ease: "easeOut" as const },
   viewport: { once: true, amount: 0.4 },
-};
+} satisfies MotionProps;
 
 const feelings = [
   { title: "Ruído de Comunicação", copy: "“Falamos línguas diferentes.”", icon: MessagesSquare },
@@ -125,7 +125,7 @@ export default function CouplePage() {
                 key={title}
                 className="group"
                 {...slideLeft}
-                transition={{ duration: 0.6 + idx * 0.05, ease: "easeOut" }}
+                transition={{ duration: 0.6 + idx * 0.05, ease: "easeOut" as const }}
               >
                 <GlassCard className="relative border border-white/40 p-6 transition-colors duration-200 group-hover:border-[var(--color-tertiary)]/70">
                   <div className="mb-3 flex items-center gap-3 text-[var(--color-tertiary)]">
@@ -150,7 +150,7 @@ export default function CouplePage() {
                 key={title}
                 className="group"
                 {...slideRight}
-                transition={{ duration: 0.6 + idx * 0.05, ease: "easeOut" }}
+                transition={{ duration: 0.6 + idx * 0.05, ease: "easeOut" as const }}
               >
                 <GlassCard className="relative border border-white/40 p-6 transition-colors duration-200 group-hover:border-[var(--color-tertiary)]/70">
                   <div className="mb-3 flex items-center gap-3 text-[var(--color-tertiary)]">
