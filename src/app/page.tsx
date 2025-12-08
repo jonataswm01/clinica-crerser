@@ -1,65 +1,96 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+import HomeHero from "@/components/sections/home-hero";
+import HomeManifesto from "@/components/sections/home-manifesto";
+import HomeServices from "@/components/sections/home-services";
+import HomeGallery from "@/components/sections/home-gallery";
+import HomeAbout from "@/components/sections/home-about";
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <HomeHero />
+      <HomeManifesto />
+      <HomeServices />
+      <HomeGallery />
+      <HomeAbout />
+
+      {/* FOOTER SECTION */}
+      <footer className="w-full relative overflow-hidden pt-24 pb-8 text-[var(--color-background)] bg-[var(--color-foreground)]">
+        {/* MOBILE: Vertical Big Text */}
+        <div
+          className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 text-[12vh] leading-none font-serif opacity-10 select-none pointer-events-none"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          CRER SER
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="mx-auto w-full px-6 md:px-12 relative z-10">
+          {/* CONTENT AREA */}
+          <div className="flex flex-col md:flex-row md:justify-end mb-12 md:mb-4">
+            {/* Desktop: Content ocupa 50% da direita */}
+            <div className="w-full md:w-1/2 grid grid-cols-1 md:grid-cols-3 gap-10 md:text-right">
+              {/* Coluna 1: Navegação */}
+              <div className="flex flex-col gap-4">
+                <h4 className="text-xs tracking-[0.2em] opacity-60 uppercase mb-2">Menu</h4>
+                <nav className="flex flex-col gap-2 font-medium text-sm md:text-base">
+                  <Link href="/crianca" className="hover:opacity-70 transition-opacity">
+                    Criança
+                  </Link>
+                  <Link href="/adulto" className="hover:opacity-70 transition-opacity">
+                    Adulto
+                  </Link>
+                  <Link href="/casal" className="hover:opacity-70 transition-opacity">
+                    Casal
+                  </Link>
+                  <Link href="/sobre" className="hover:opacity-70 transition-opacity">
+                    Sobre
+                  </Link>
+                  <Link href="/contato" className="hover:opacity-70 transition-opacity">
+                    Contato
+                  </Link>
+                </nav>
+              </div>
+
+              {/* Coluna 2: Contato & Social */}
+              <div className="flex flex-col gap-4">
+                <h4 className="text-xs tracking-[0.2em] opacity-60 uppercase mb-2">Contato</h4>
+                <div className="flex flex-col gap-1 opacity-80 text-sm md:text-base">
+                  <p>Santa Adélia - SP</p>
+                  <p>(17) 99999-9999</p>
+                  <a href="mailto:contato@crerser.com.br" className="hover:underline">
+                    contato@crerser.com.br
+                  </a>
+                </div>
+              </div>
+
+              {/* Coluna 3: Social */}
+              <div className="flex flex-col gap-4">
+                <h4 className="text-xs tracking-[0.2em] opacity-60 uppercase mb-2">Social</h4>
+                <div className="flex flex-col gap-2 font-medium text-sm md:text-base md:items-end md:text-right">
+                  <a href="#" className="hover:opacity-70 transition-opacity">
+                    Instagram
+                  </a>
+                  <a href="#" className="hover:opacity-70 transition-opacity">
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* DESKTOP: Horizontal Big Text */}
+          <div className="hidden md:block w-full text-center mt-12">
+            <h1 className="text-[18vw] leading-[0.8] font-serif opacity-10 select-none tracking-tighter">CRER SER</h1>
+          </div>
+
+          {/* SEPARATOR & COPYRIGHT */}
+          <div className="mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-xs opacity-60 gap-4">
+            <p>© 2025 Crer Ser.</p>
+            <p>All Rights Reserved.</p>
+          </div>
         </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
