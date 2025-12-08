@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
 import {
   Activity,
   CheckCircle2,
@@ -23,16 +23,16 @@ const secondaryRgb = "183,110,121";
 const fadeUp = {
   initial: { opacity: 0, y: 20, filter: "blur(10px)" },
   whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
-  transition: { duration: 0.7, ease: "easeOut" },
+  transition: { duration: 0.7, ease: "easeOut" as const },
   viewport: { once: true, amount: 0.3 },
-};
+} satisfies MotionProps;
 
 const blurReveal = {
   initial: { opacity: 0.6, filter: "blur(10px)" },
   whileInView: { opacity: 1, filter: "blur(0px)" },
-  transition: { duration: 0.8, ease: "easeOut" },
+  transition: { duration: 0.8, ease: "easeOut" as const },
   viewport: { once: true, amount: 0.3 },
-};
+} satisfies MotionProps;
 
 const diagnosticPoints = [
   {
@@ -149,7 +149,7 @@ export default function IndividualPage() {
               transition={{ type: "spring", stiffness: 280, damping: 20 }}
               className="h-full"
               {...fadeUp}
-              transition={{ duration: 0.5 + idx * 0.03, ease: "easeOut" }}
+              transition={{ duration: 0.5 + idx * 0.03, ease: "easeOut" as const }}
             >
               <GlassCard className="relative h-full border border-white/40 p-6 transition-colors duration-200">
                 <div className="mb-4 flex items-center justify-between">
