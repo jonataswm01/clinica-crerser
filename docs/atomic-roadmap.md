@@ -6,7 +6,7 @@
 - [x] **Task 1.1: Initialization**
     * Initialize Next.js 14 project (TypeScript, Tailwind, ESLint).
     * Clean up default boilerplate (remove default CSS).
-    * Install dependencies: `framer-motion`, `lucide-react`, `clsx`, `tailwind-merge`, `@studio-freight/react-lenis`, `zustand`, `sass` (if needed).
+    * Install dependencies: `framer-motion`, `lucide-react`, `clsx`, `tailwind-merge`, `lenis`, `zustand`, `sass` (if needed).
     * **Prompt:** "Initialize the project structure and install dependencies according to the Tech Stack doc."
 
 - [x] **Task 1.2: Design System Configuration**

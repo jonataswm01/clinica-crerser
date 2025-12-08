@@ -10,7 +10,7 @@ The AI Agent must strictly adhere to these versions and libraries.
 * **Language:** TypeScript (Strict mode).
 * **Styling:** Tailwind CSS (v3.4+).
 * **Motion/Animations:** Framer Motion (v11+).
-* **Smooth Scroll:** @studio-freight/react-lenis (or `lenis/react`).
+* **Smooth Scroll:** `lenis/react`.
 * **State Management:** Zustand (Only for global UI states like Preloader & Menu).
 * **Forms:** React Hook Form + Zod (Validation).
 * **Icons:** Lucide React (Clean, thin strokes).

@@ -351,7 +351,7 @@ export default function ContatoPage() {
       </section>
 
       {/* FOOTER SECTION */}
-      <footer className="w-full relative overflow-hidden pt-24 pb-8 text-[var(--color-background)] bg-[var(--color-secondary)]">
+      <footer className="w-full relative overflow-hidden rounded-none border-0 pt-24 pb-8 text-[var(--color-background)] bg-[var(--color-secondary)]">
         {/* MOBILE: Vertical Big Text */}
         <div
           className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 text-[12vh] leading-none font-serif opacity-10 select-none pointer-events-none"
