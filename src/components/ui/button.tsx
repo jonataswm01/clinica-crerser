@@ -53,6 +53,10 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     magnetic?: boolean;
   };
 
+type AccentStyle = CSSProperties & {
+  ["--btn-accent"]?: string;
+};
+
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -69,8 +73,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const accent = colorTokens[colorTheme];
-    const shouldMagnetize = magnetic && variant === "primary";
-    const accentStyle: CSSProperties = {
+    const resolvedVariant: ButtonVariant = variant ?? "primary";
+    const shouldMagnetize = magnetic && resolvedVariant === "primary";
+    const accentStyle: AccentStyle = {
       "--btn-accent": accent,
       ...style,
     };
@@ -80,8 +85,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type={type}
         className={cn(
-          buttonStyles({ variant, size }),
-          variantColorClasses[variant],
+          buttonStyles({ variant: resolvedVariant, size }),
+          variantColorClasses[resolvedVariant],
           className
         )}
         style={accentStyle}
