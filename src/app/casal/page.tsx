@@ -94,10 +94,10 @@ export default function CouplePage() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
           />
           <Image
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80&sat=-12&exp=4"
+            src="/service-couple.jpg"
             alt="Casal em conexão tranquila, mãos entrelaçadas em ambiente sereno"
             fill
-            className="relative z-10 object-cover"
+            className="relative z-10 object-cover object-[50%_20%]"
             priority
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent z-20" />

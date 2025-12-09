@@ -63,17 +63,17 @@ const credentials = ["Psicóloga Clínica", "Psicopedagoga", "Consteladora"];
 
 const gallery = [
   {
-    src: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=80",
+    src: "/about-lifestyle-1.jpg",
     alt: "Mesa de estudos com livros e caderno aberto",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2070&auto=format&fit=crop",
+    src: "/about-lifestyle-2.jpg",
     alt: "Detalhe de café quente em ambiente aconchegante de consultório",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1800&q=80",
+    src: "/about-lifestyle-3.jpg",
     alt: "Mãos em gesto de conexão humana em ambiente acolhedor",
     span: "col-span-1 row-span-1",
   },
@@ -105,10 +105,10 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent" />
           <Image
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1600&q=80&sat=-10&exp=2"
+            src="/about-hero.jpg"
             alt="Mulher profissional sorrindo, elegante e segura"
             fill
-            className="relative z-10 object-cover"
+            className="relative z-10 object-cover object-[50%_15%]"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />

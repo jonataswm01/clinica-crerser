@@ -16,10 +16,10 @@ const HomeAbout = () => {
         >
           <div className="absolute inset-0 translate-x-10 translate-y-10 rounded-tr-[80px] rounded-bl-[80px] rounded-tl-[24px] rounded-br-[24px] border-[4px] border-[var(--color-foreground)] opacity-50 z-0" />
           <Image
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
+            src="/home-about.jpg"
             alt="Alaídes Franco, psicóloga clínica"
             fill
-            className="relative z-10 object-cover"
+            className="relative z-10 object-cover object-[50%_25%]"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />
         </motion.div>

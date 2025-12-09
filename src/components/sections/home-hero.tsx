@@ -63,10 +63,10 @@ const HomeHero = () => {
           transition={{ delay: 1.3, duration: 0.6, ease: "easeOut" as const }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1400&q=80"
+            src="/home-hero.jpg"
             alt="Mãe e criança de mãos dadas em um momento de leveza"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />

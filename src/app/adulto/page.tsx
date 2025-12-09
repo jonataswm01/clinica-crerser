@@ -109,10 +109,10 @@ export default function IndividualPage() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
           />
           <Image
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1600&q=80&sat=-12&exp=3"
+            src="/service-adult.jpg"
             alt="Mulher contemplativa em luz suave, em silêncio e serenidade"
             fill
-            className="relative z-10 object-cover"
+            className="relative z-10 object-cover object-top"
             priority
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent z-20" />
@@ -227,10 +227,10 @@ export default function IndividualPage() {
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[2rem] border-2 border-[var(--color-secondary)]" />
             <div className="relative h-full w-full overflow-hidden rounded-[2rem]">
               <Image
-                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1900&auto=format&fit=crop"
-                alt="Consultório acolhedor"
+                src="/about-lifestyle-2.jpg"
+                alt="Alaídes Franco em consultório acolhedor"
                 fill
-                className="object-cover rounded-[2rem]"
+                className="object-cover object-[50%_25%] rounded-[2rem]"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />

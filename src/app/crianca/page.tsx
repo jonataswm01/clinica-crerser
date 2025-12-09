@@ -63,10 +63,10 @@ export default function KidsPage() {
           <div className="pointer-events-none absolute -top-10 right-6 h-40 w-40 rounded-full bg-[rgba(246,162,141,0.4)] blur-3xl" />
           <div className="pointer-events-none absolute top-6 -right-10 h-32 w-32 rounded-[40px] bg-[rgba(246,162,141,0.3)] blur-2xl" />
           <Image
-            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1400&q=80"
+            src="/service-kids.jpg"
             alt="Criança estudando com apoio em um ambiente acolhedor"
             fill
-            className="relative z-10 object-cover"
+            className="relative z-10 object-cover object-[50%_20%]"
             priority
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-20" />
@@ -128,10 +128,10 @@ export default function KidsPage() {
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
           />
           <Image
-            src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=1200&q=80"
+            src="/service-kids.jpg"
             alt="Brinquedos de madeira em ambiente acolhedor"
             fill
-            className="relative z-10 object-cover"
+            className="relative z-10 object-cover object-top"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />
         </motion.div>
