@@ -17,7 +17,7 @@ const colorMap: Record<AuroraVariant, [string, string, string]> = {
     "var(--color-secondary)",
     "var(--color-tertiary)",
   ],
-  kids: [
+  kids: [,
     "var(--color-primary)",
     "color-mix(in srgb, var(--color-primary) 70%, white 30%)",
     "color-mix(in srgb, var(--color-primary) 50%, var(--color-tertiary) 50%)",
